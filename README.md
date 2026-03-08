@@ -18,6 +18,12 @@ In 2026, AI-augmented communication is the norm. You will learn to **direct AI c
 | **B — Written Communication & AI Foundations** | Professional writing + LLM concepts + AI coding tools | 1, 2, 3, 5, 6, 8 |
 | **C — Agentic AI Pipeline** | Build your personal communication agent | 9, 11, 12, 14 |
 
+## Student Bio
+
+Name: Peyman Jaferi
+Program: CEM
+Bio: I am interested in AI tools and technology for construction management.
+
 ## Weekly Schedule
 
 | Wk | Topic | Milestone |
