@@ -1,4 +1,4 @@
-# M1 Template Outputs
+M1: add prompt templates and outputs
 
 ## RFI Output
 Subject: RFI – Pipe Hanger Spacing Conflict
