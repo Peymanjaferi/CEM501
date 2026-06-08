@@ -1,15 +1,10 @@
 class Channel:
-    """Base class — every communication channel must implement these methods."""
-
-    def fetch_messages(self) -> list[dict]:
-        """Pull new incoming messages from this channel."""
+    def fetch_messages(self):
         raise NotImplementedError
 
-    def send_message(self, recipient: str, text: str) -> bool:
-        """Send a message through this channel. Returns True if successful."""
+    def send_message(self, recipient, text):
         raise NotImplementedError
 
     @property
-    def channel_name(self) -> str:
-        """Human-readable name of this channel (e.g., 'email', 'telegram')."""
+    def channel_name(self):
         raise NotImplementedError
