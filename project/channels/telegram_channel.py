@@ -1,22 +1,25 @@
-class EmailChannel(Channel):
-    channel_name = "email"
+import os
+from dotenv import load_dotenv
+from telegram import Bot
 
-    def fetch_messages(self):
-        # Uses IMAP to connect to inbox and pull new emails
-        ...
+from channels.base import Channel
 
-    def send_message(self, recipient, text):
-        # Uses SMTP to send an email
-        ...
-
+load_dotenv()
 
 class TelegramChannel(Channel):
-    channel_name = "telegram"
+
+    @property
+    def channel_name(self):
+        return "telegram"
 
     def fetch_messages(self):
-        # Uses Telegram Bot API to get new messages
-        ...
+        return []
 
-    def send_message(self, recipient, text):
-        # Uses Telegram Bot API to send a reply
-        ...
+    def send_message(self, chat_id, text):
+        try:
+            bot = Bot(token=os.getenv("TELEGRAM_BOT_TOKEN"))
+            bot.send_message(chat_id=chat_id, text=text)
+            return True
+        except Exception as e:
+            print(f"Error: {e}")
+            return False
