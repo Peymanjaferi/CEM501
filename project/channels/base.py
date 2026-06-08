@@ -1,16 +1,15 @@
-from abc import ABC, abstractmethod
+class Channel:
+    """Base class — every communication channel must implement these methods."""
 
-class Channel(ABC):
+    def fetch_messages(self) -> list[dict]:
+        """Pull new incoming messages from this channel."""
+        raise NotImplementedError
 
-    @abstractmethod
-    def fetch_messages(self):
-        pass
-
-    @abstractmethod
-    def send_message(self, recipient, text):
-        pass
+    def send_message(self, recipient: str, text: str) -> bool:
+        """Send a message through this channel. Returns True if successful."""
+        raise NotImplementedError
 
     @property
-    @abstractmethod
-    def channel_name(self):
-        pass
+    def channel_name(self) -> str:
+        """Human-readable name of this channel (e.g., 'email', 'telegram')."""
+        raise NotImplementedError
